@@ -5,6 +5,14 @@ var $form = $("#formulario"),
 	$list = $('#contenido'),
 	$post =  $(".item").first();//contenido
 
+var $form = $('#formulario'),
+	$titulo = $('#titulo'),
+	$url = $('#url'),
+	$button = $('#mostrar-form'),
+	$list = $('#contenido'),
+	$post = $('.item').first();
+
+
 function mostrarFormulario(){
 	$form.slideToggle();
 	return false;
@@ -13,22 +21,21 @@ function mostrarFormulario(){
 function agregarPost(){
 	var url = $url.val(),
 		titulo = $titulo.val(),
-		$clone = post.clone(); //jquery me da una representacion del objeto
+		$clone = $post.clone();
 
+	$clone.find('.titulo_item a')
+		.text(titulo)
+		.attr('href', url);
 
-	$clone.find(".titulo_item a")//encontrar elementos que cumplan igual css	
-		.text(titulo)//modificar el titulo
-		.attr('href', url);//remplazamos el html
+	$clone.hide();
 
-	$clone.hide();//atajo para ocultar al clon
+	$list.prepend($clone);
 
-	$list.prepend($clone);//embeber el clon creado y ponerlo primero
-	$clone.fadeIn();//efecto de aparecer
-	
+	$clone.fadeIn();
+
 	return false;
 }
 
-//Eventos
-$button.click(mostrarFormulario);
-$form.on('submit', agregarPost);
-  
+// Eventos
+$button.click( mostrarFormulario );
+$form.on('submit', agregarPost );
