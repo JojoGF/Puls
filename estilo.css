@@ -313,7 +313,8 @@ nav ul #publicar_nav a:hover{
 
 	/*Formulario*/
 
-	.formulario{
+.formulario{
+	display:hidden;
 	padding: 1em;
 	text-align: right;
 
@@ -323,7 +324,6 @@ nav ul #publicar_nav a:hover{
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 0.2em 0.6em;
-	display:hidden;
 }
 
 .formulario input[type="submit"]{
