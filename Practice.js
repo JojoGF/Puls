@@ -46,4 +46,4 @@ function agregarPost(){
 
 // Eventos
 $button.click( mostrarFormulario );
-$form.on('submit', agregarPost );
+$form.on('submit', agregarPost ); 
