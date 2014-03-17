@@ -1,21 +1,20 @@
-var $form = $("#formulario"),
-	$titulo = $("#titulo"),
-	$url = $("#url"),
-	$button = $("#mostrar-form"),
-	$list = $('#contenido'),
-	$post =  $(".item").first();//contenido
+var $form  = $('#formulario'),
+	$titulo = $('#titulo'),
+	$url = $('#link'),
+	$primerPost = $('.item').first(),
+	$lista = $("#contenido");
 
 
 // para guardar tit y url x si se me va la pag y no subi el post.
 if (localStorage.getItem('autosave')){//Si tiene un item gurdado es true y sigue
-	$titulo.val(sesionStorage.getItem('titulo'));
-	$url.val(sesionStorage.getItem('url')); 
+	$titulo.val(sessionStorage.getItem('titulo'));
+	$url.val(sessionStorage.getItem('url')); 
 }
 
 //guardar lo que esta tipeado en cada campo url y titulo. Cada un seg JS ejecuta la funcion
 var id = setInterval(function(){//
-	sesionStorage.setItem('titulor', $titulo.val());
-	sesionStorage.setItem('url'), $url.val());
+	sessionStorage.setItem('titulor', $titulo.val());
+	sessionStorage.setItem('url', $url.val());
 }, 1000/*milisegundos de guardado de tipeado*/);
 
 function mostrarFormulario(){
@@ -45,5 +44,5 @@ function agregarPost(){
 }
 
 // Eventos
-$button.click( mostrarFormulario );
-$form.on('submit', agregarPost ); 
+$('#publicar_nav a').click( mostrarFormulario );
+$('#formulario').on('submit', agregarPost)

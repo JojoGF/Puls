@@ -1,4 +1,4 @@
-@font-face {
+/@font-face {
     font-family: 'open_sansregular';
     src: url('Fonts/OpenSans-Regular-webfont.eot');
     src: url('Fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -9,6 +9,7 @@
     font-style: normal;
 
 }
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);*/
 
 
 @font-face {
@@ -314,16 +315,20 @@ nav ul #publicar_nav a:hover{
 	/*Formulario*/
 
 .formulario{
-	display:hidden;
+	display:none;
 	padding: 1em;
 	text-align: right;
 
 }
 
 .formulario input{
-	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 0.2em 0.6em;
+}
+
+.formulario input[type="text"],
+.formulario input[type="url"]{
+	border: 1px solid #888;
 }
 
 .formulario input[type="submit"]{
